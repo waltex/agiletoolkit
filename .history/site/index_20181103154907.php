@@ -31,12 +31,18 @@ $t->addTab('tets', function ($tab) {
             $i++;
         }
 
+        $modal = $tab->add(['Modal', 'title' => 'Simple title']);
+$modal->set(function ($p) use ($modal) {
+    $p->add('LoremIpsum');
 
+    $p->add(['Button', 'Hide'])->on('click', $modal->hide());
+});
 
-        return [
+        return [git remote addgit
             new \atk4\ui\jsNotify('Not yet implemented'),
             new \atk4\ui\jsReload($g),
             //new \atk4\ui\jsModal('My Popup Title',$modal),
+
         ];
             //return 'deleted rows ' . $arg1;
     }, ['confirm' => 'sure?', 'args' => [new \atk4\ui\jsExpression('[]', [$sel->jsChecked()])]]);
