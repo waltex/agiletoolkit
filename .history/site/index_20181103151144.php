@@ -41,7 +41,7 @@ $modal->set(function ($p) use ($modal) {
         return [
             new \atk4\ui\jsNotify('Not yet implemented'),
             new \atk4\ui\jsReload($g),
-            new \atk4\ui\jsModal('My Popup Title',$modal),
+            new \atk4\ui\jsModal('My Popup Title',$$modal->show()),
 
         ];
             //return 'deleted rows ' . $arg1;
