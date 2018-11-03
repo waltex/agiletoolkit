@@ -22,6 +22,14 @@ $t->addTab('tets', function ($tab) {
     $vp->add(['Text', 'ciao ']);
     $vp->add(['Text', 'ciao 2 ']);
 */
+$vp2 = $tab->add('VirtualPage');
+$vp2->add(['LoremIpsum', 'size' => 2]);
+
+$vp = $tab->add('VirtualPage');
+$vp->add(['LoremIpsum', 'size' => 2]);
+
+$tab->add(['Button', 'Dynamic Modal'])
+    ->on('click', new \atk4\ui\jsModal('My Popup Title', $vp->getURL('cut')));
 
     $b2 = $g->menu->addItem('deleted row');
     $b2->on('click', function ($j, $arg1) use ($sel, $g, $tab) {
@@ -37,7 +45,7 @@ $t->addTab('tets', function ($tab) {
         return [
             new \atk4\ui\jsNotify('Not yet implemented'),
             new \atk4\ui\jsReload($g),
-            //new \atk4\ui\jsModal('My Popup Title'),
+            new \atk4\ui\jsModal('My Popup Title',$vp->getURL('cut')),
         ];
             //return 'deleted rows ' . $arg1;
     }, ['confirm' => 'sure?', 'args' => [new \atk4\ui\jsExpression('[]', [$sel->jsChecked()])]]);

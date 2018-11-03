@@ -37,7 +37,7 @@ $t->addTab('tets', function ($tab) {
         return [
             new \atk4\ui\jsNotify('Not yet implemented'),
             new \atk4\ui\jsReload($g),
-            //new \atk4\ui\jsModal('My Popup Title'),
+            new \atk4\ui\jsModal('My Popup Title'),
         ];
             //return 'deleted rows ' . $arg1;
     }, ['confirm' => 'sure?', 'args' => [new \atk4\ui\jsExpression('[]', [$sel->jsChecked()])]]);

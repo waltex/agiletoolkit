@@ -22,7 +22,6 @@ $t->addTab('tets', function ($tab) {
     $vp->add(['Text', 'ciao ']);
     $vp->add(['Text', 'ciao 2 ']);
 */
-
     $b2 = $g->menu->addItem('deleted row');
     $b2->on('click', function ($j, $arg1) use ($sel, $g, $tab) {
         $i = 0;
@@ -37,7 +36,7 @@ $t->addTab('tets', function ($tab) {
         return [
             new \atk4\ui\jsNotify('Not yet implemented'),
             new \atk4\ui\jsReload($g),
-            //new \atk4\ui\jsModal('My Popup Title'),
+            new \atk4\ui\jsModal('My Popup Title',$vp->getURL('cut')),
         ];
             //return 'deleted rows ' . $arg1;
     }, ['confirm' => 'sure?', 'args' => [new \atk4\ui\jsExpression('[]', [$sel->jsChecked()])]]);
