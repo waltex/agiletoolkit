@@ -17,7 +17,11 @@ $t->addTab('tets', function ($tab) {
     $g->addQuickSearch(['col3', 'col1'], true);
     $sel = $g->addSelection();
 
-
+/*
+    $vp = $tab->add('VirtualPage');
+    $vp->add(['Text', 'ciao ']);
+    $vp->add(['Text', 'ciao 2 ']);
+*/
 
     $b2 = $g->menu->addItem('deleted row');
     $b2->on('click', function ($j, $arg1) use ($sel, $g, $tab) {
@@ -27,13 +31,13 @@ $t->addTab('tets', function ($tab) {
             $i++;
         }
 
-        //$vp = $tab->add('VirtualPage');
-        //$vp->add(['Text', 'ciao ']);
+        $vp = $tab->add('VirtualPage');
+        $vp->add(['LoremIpsum', 'size' => 2]);
 
         return [
-            new \atk4\ui\jsNotify('Not yet implemented'),
-            new \atk4\ui\jsReload($g),
-            //new \atk4\ui\jsModal('My Popup Title',$vp),
+            //new \atk4\ui\jsNotify('Not yet implemented'),
+            //new \atk4\ui\jsReload($g),
+            new \atk4\ui\jsModal('My Popup Title',$vp->getURL ('cut')),
         ];
             //return 'deleted rows ' . $arg1;
     }, ['confirm' => 'sure?', 'args' => [new \atk4\ui\jsExpression('[]', [$sel->jsChecked()])]]);

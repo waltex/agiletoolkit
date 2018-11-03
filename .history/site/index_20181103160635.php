@@ -27,13 +27,13 @@ $t->addTab('tets', function ($tab) {
             $i++;
         }
 
-        //$vp = $tab->add('VirtualPage');
-        //$vp->add(['Text', 'ciao ']);
+        $vp = $tab->add('VirtualPage');
+        $vp->add(['Text', 'ciao ']);
 
         return [
-            new \atk4\ui\jsNotify('Not yet implemented'),
-            new \atk4\ui\jsReload($g),
-            //new \atk4\ui\jsModal('My Popup Title',$vp),
+            //new \atk4\ui\jsNotify('Not yet implemented'),
+            //new \atk4\ui\jsReload($g),
+            new \atk4\ui\jsModal('My Popup Title'),
         ];
             //return 'deleted rows ' . $arg1;
     }, ['confirm' => 'sure?', 'args' => [new \atk4\ui\jsExpression('[]', [$sel->jsChecked()])]]);

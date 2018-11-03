@@ -27,11 +27,11 @@ $t->addTab('tets', function ($tab) {
             $i++;
         }
 
-        //$vp = $tab->add('VirtualPage');
-        //$vp->add(['Text', 'ciao ']);
+        $vp = $tab->add('VirtualPage');
+        $vp->add(['Text', 'ciao ']);
 
         return [
-            new \atk4\ui\jsNotify('Not yet implemented'),
+            //new \atk4\ui\jsNotify('Not yet implemented'),
             new \atk4\ui\jsReload($g),
             //new \atk4\ui\jsModal('My Popup Title',$vp),
         ];
